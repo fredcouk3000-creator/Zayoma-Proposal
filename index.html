@@ -624,8 +624,8 @@ em{font-style:italic;}
 
 /* RESPONSIVE */
 @media(max-width:960px){
-  .sidenav{transform:translateX(-220px);}
-  .sidenav.open{transform:translateX(0);}
+  .sidenav{transform:translateX(-220px);pointer-events:none;}
+  .sidenav.open{transform:translateX(0);pointer-events:all;}
   .main{margin-left:0;width:100%;overflow-x:hidden;}
   .topnav{display:flex;}
   .cover{overflow:hidden;width:100%;flex-direction:column;}
