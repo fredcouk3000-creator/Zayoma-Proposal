@@ -123,8 +123,7 @@ em{font-style:italic;}
 
 /* PAGE 1 — COVER */
 .cover{
-  min-height:100vh;display:grid;
-  grid-template-rows:1fr auto;
+  min-height:100vh;display:flex;flex-direction:column;
   background:var(--dark);overflow:hidden;
   position:relative;width:100%;
 }
@@ -136,7 +135,7 @@ em{font-style:italic;}
 }
 .cover-content{
   display:grid;grid-template-columns:1fr 1fr;
-  min-height:calc(100vh - 160px);position:relative;z-index:1;
+  flex:1;position:relative;z-index:1;
 }
 .cover-left{
   padding:80px 64px;
@@ -159,7 +158,11 @@ em{font-style:italic;}
   font-size:16px;color:rgba(248,246,241,0.6);
   max-width:440px;line-height:1.85;margin-bottom:48px;
 }
-.cover-cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+.cover-cta-row{display:flex;flex-direction:column;gap:10px;max-width:320px;}
+@media(min-width:961px){
+  .cover-cta-row{flex-direction:row;max-width:none;}
+  .btn{width:auto;}
+}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
   padding:13px 28px;border-radius:2px;
@@ -514,13 +517,17 @@ em{font-style:italic;}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .reveal.in{opacity:1;transform:translateY(0);}
 
-/* PAGE NAV BAR */
 .page-nav{
   display:flex;align-items:center;justify-content:space-between;
   padding:20px 64px;
   border-top:1px solid var(--border);
   background:var(--white);
   gap:12px;flex-shrink:0;
+  position:relative;z-index:10;
+}
+.page-nav.dark{
+  background:rgba(255,255,255,0.04);
+  border-top:1px solid rgba(255,255,255,0.08);
 }
 .page-nav.dark{
   background:rgba(255,255,255,0.04);
@@ -621,8 +628,8 @@ em{font-style:italic;}
   .sidenav.open{transform:translateX(0);}
   .main{margin-left:0;width:100%;overflow-x:hidden;}
   .topnav{display:flex;}
-  .cover{overflow:hidden;width:100%;}
-  .cover-content{grid-template-columns:1fr;width:100%;}
+  .cover{overflow:hidden;width:100%;flex-direction:column;}
+  .cover-content{grid-template-columns:1fr;width:100%;flex:1;}
   .cover-right{display:none;}
   .cover-left{padding:80px 20px 48px;width:100%;overflow:hidden;}
   .cover-title{font-size:clamp(28px,7vw,44px);word-break:break-word;}
