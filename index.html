@@ -213,7 +213,7 @@ em{font-style:italic;}
 }
 
 /* PAGE 2 — PROBLEM + SOLUTION */
-.page-content{padding:88px 72px;}
+.page-content{padding:88px 64px;max-width:100%;overflow-x:hidden;}
 .page-label{
   font-size:10px;font-weight:600;letter-spacing:0.22em;
   text-transform:uppercase;color:var(--gold);
@@ -517,10 +517,10 @@ em{font-style:italic;}
 /* PAGE NAV BAR */
 .page-nav{
   display:flex;align-items:center;justify-content:space-between;
-  padding:20px 72px;
+  padding:20px 64px;
   border-top:1px solid var(--border);
   background:var(--white);
-  gap:16px;
+  gap:12px;flex-shrink:0;
 }
 .page-nav.dark{
   background:rgba(255,255,255,0.04);
@@ -621,17 +621,20 @@ em{font-style:italic;}
   .sidenav.open{transform:translateX(0);}
   .main{margin-left:0;width:100%;overflow-x:hidden;}
   .topnav{display:flex;}
-  .cover{overflow:hidden;}
+  .cover{overflow:hidden;width:100%;}
   .cover-content{grid-template-columns:1fr;width:100%;}
   .cover-right{display:none;}
-  .cover-left{padding:72px 24px 48px;width:100%;overflow:hidden;}
-  .cover-title{font-size:clamp(32px,8vw,48px);word-break:break-word;}
+  .cover-left{padding:80px 20px 48px;width:100%;overflow:hidden;}
+  .cover-title{font-size:clamp(28px,7vw,44px);word-break:break-word;}
   .cover-body{max-width:100%;font-size:14px;}
   .cover-cta-row{flex-direction:column;align-items:flex-start;gap:10px;}
   .btn{width:100%;justify-content:center;}
-  .page-content{padding:56px 20px;}
-  .pain-grid{grid-template-columns:1fr;}
+  .page-content{padding:56px 20px;overflow-x:hidden;}
+  .pain-grid{grid-template-columns:1fr;margin-bottom:48px;}
   .vs-wrap,.map-wrap{margin-bottom:40px;}
+  .vs-table{width:100%;}
+  .vs-row{grid-template-columns:1fr 18px 1fr;gap:4px;padding:10px 12px;}
+  .vs-b,.vs-a{font-size:11px;}
   .tier-grid{grid-template-columns:1fr;}
   .tier{border-right:none;border-bottom:1px solid var(--border-med);}
   .tier:last-child{border-bottom:none;}
@@ -639,48 +642,59 @@ em{font-style:italic;}
   .contact-grid{grid-template-columns:1fr;padding:32px 20px;}
   .deliv-grid{grid-template-columns:1fr;}
   .phase-inner{padding:20px 16px;}
-  .page-nav{padding:14px 16px;gap:8px;}
+  .page-nav{padding:12px 16px;gap:6px;}
   .pnav-label{display:none;}
-  .pnav-btn{padding:10px 14px;font-size:10px;letter-spacing:0.08em;}
+  .pnav-btn{padding:9px 12px;font-size:10px;letter-spacing:0.06em;white-space:nowrap;}
   .why-grid{grid-template-columns:1fr;}
   .retainer{flex-direction:column;}
   .retainer-right{text-align:left;}
   .contact-hero{padding:64px 20px;}
-  .solution-two-col{grid-template-columns:1fr;}
+  .solution-two-col{grid-template-columns:1fr;gap:32px;}
   .conf-note{margin:0 20px 48px;padding:20px;}
   .section-intro{margin-bottom:40px;}
-  .pain-grid{margin-bottom:48px;}
   .float-contact{bottom:72px;right:12px;}
   .page{overflow-x:hidden;}
 }
 @media(max-width:480px){
-  h1{font-size:30px;line-height:1.1;}
-  h2{font-size:24px;}
-  h3{font-size:20px;}
-  .cover-left{padding:64px 20px 40px;}
+  h1{font-size:26px;line-height:1.12;}
+  h2{font-size:22px;}
+  h3{font-size:18px;}
+  h4{font-size:15px;}
+  p{font-size:14px;}
+  .cover-left{padding:76px 16px 40px;}
   .cover-stats{grid-template-columns:1fr 1fr;}
-  .stat-n{font-size:28px;}
-  .stat{padding:20px 16px;}
-  .tier-price{font-size:30px;}
-  .retainer-price{font-size:26px;}
-  .pnav-dots{gap:5px;}
-  .pnav-dot{width:6px;height:6px;}
-  .pnav-dot.active{width:18px;}
-  .page-content{padding:48px 16px;}
-  .phase-hdr-body{padding:16px 16px;}
-  .phase-badge{min-width:56px;font-size:24px;}
-  .meet-card{padding:28px 20px;}
-  .contact-card{padding:24px 20px;}
-  .contact-hero{padding:48px 16px;}
-  .contact-grid{padding:24px 16px;}
-  .conf-note{margin:0 16px 40px;}
+  .stat-n{font-size:26px;}
+  .stat{padding:16px 12px;}
+  .stat-l{font-size:10px;}
+  .tier-price{font-size:28px;}
+  .retainer-price{font-size:22px;}
+  .pnav-dots{gap:4px;}
+  .pnav-dot{width:5px;height:5px;}
+  .pnav-dot.active{width:14px;}
+  .pnav-btn{padding:8px 10px;font-size:9px;}
+  .page-content{padding:44px 14px;}
+  .phase-hdr-body{padding:14px 12px;}
+  .phase-badge{min-width:50px;font-size:20px;}
+  .phase-name{font-size:15px;}
+  .phase-sub{font-size:9px;}
+  .meet-card{padding:22px 16px;}
+  .contact-card{padding:20px 16px;}
+  .contact-hero{padding:44px 16px;}
+  .contact-grid{padding:18px 14px;}
+  .conf-note{margin:0 14px 32px;padding:16px;}
+  .pain-card{padding:22px 18px;}
+  .why-card{padding:18px 0;}
+  .page-nav{padding:10px 10px;gap:4px;}
+  .tags{gap:4px;}
+  .tag{font-size:10px;padding:4px 8px;}
+  .map-cat{margin-bottom:16px;}
 }
 
 /* GLOBAL OVERFLOW GUARD */
 html,body{overflow-x:hidden;max-width:100vw;}
 
 /* TWO COL SOLUTION */
-.solution-two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.solution-two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;width:100%;}
 </style>
 </head>
 <body>
@@ -939,6 +953,8 @@ html,body{overflow-x:hidden;max-width:100vw;}
       <h2>Three packages. One clear outcome.</h2>
       <p style="margin-top:16px;">Choose the level of investment that fits where your brand is right now. Every package delivers the same outcome: a system that runs reliably. The difference is depth, speed, and the level of ongoing support you receive. You pay per phase, not everything upfront.</p>
     </div>
+
+    <div class="tier-grid reveal">
       <div class="tier">
         <div class="tier-label">Package One</div>
         <div class="tier-name">Starter System</div>
@@ -1001,7 +1017,7 @@ html,body{overflow-x:hidden;max-width:100vw;}
         <button class="tier-btn" onclick="goPage(5)">Most popular: start here</button>
       </div>
 
-    <div class="tier-grid reveal">
+      <div class="tier">
         <div class="tier-label">Package Three</div>
         <div class="tier-name">Premium System</div>
         <div class="tier-price">&#8358;1.84M</div>
