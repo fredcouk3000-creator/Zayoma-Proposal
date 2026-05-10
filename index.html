@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zayoma — A Proposal by Frederick Sam</title>
+<title>Zayoma: A Proposal by Frederick Sam</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -119,14 +119,14 @@ em{font-style:italic;}
 .main{margin-left:220px;}
 
 /* PAGE */
-.page{min-height:100vh;display:flex;flex-direction:column;}
+.page{min-height:100vh;display:flex;flex-direction:column;width:100%;overflow-x:hidden;}
 
 /* PAGE 1 — COVER */
 .cover{
   min-height:100vh;display:grid;
   grid-template-rows:1fr auto;
   background:var(--dark);overflow:hidden;
-  position:relative;
+  position:relative;width:100%;
 }
 .cover-bg{
   position:absolute;inset:0;
@@ -619,36 +619,65 @@ em{font-style:italic;}
 @media(max-width:960px){
   .sidenav{transform:translateX(-220px);}
   .sidenav.open{transform:translateX(0);}
-  .main{margin-left:0;}
+  .main{margin-left:0;width:100%;overflow-x:hidden;}
   .topnav{display:flex;}
-  .cover-content{grid-template-columns:1fr;}
+  .cover{overflow:hidden;}
+  .cover-content{grid-template-columns:1fr;width:100%;}
   .cover-right{display:none;}
-  .cover-left{padding:60px 28px;}
-  .page-content{padding:64px 28px;}
+  .cover-left{padding:72px 24px 48px;width:100%;overflow:hidden;}
+  .cover-title{font-size:clamp(32px,8vw,48px);word-break:break-word;}
+  .cover-body{max-width:100%;font-size:14px;}
+  .cover-cta-row{flex-direction:column;align-items:flex-start;gap:10px;}
+  .btn{width:100%;justify-content:center;}
+  .page-content{padding:56px 20px;}
   .pain-grid{grid-template-columns:1fr;}
-  .vs-wrap,.map-wrap{margin-bottom:48px;}
+  .vs-wrap,.map-wrap{margin-bottom:40px;}
   .tier-grid{grid-template-columns:1fr;}
   .tier{border-right:none;border-bottom:1px solid var(--border-med);}
   .tier:last-child{border-bottom:none;}
   .meet-grid{grid-template-columns:1fr;}
-  .contact-grid{grid-template-columns:1fr;padding:40px 28px;}
+  .contact-grid{grid-template-columns:1fr;padding:32px 20px;}
   .deliv-grid{grid-template-columns:1fr;}
-  .phase-inner{padding:24px 20px;}
-  .cover-footer,.page-footer,.conf-note{padding-left:28px;padding-right:28px;}
+  .phase-inner{padding:20px 16px;}
+  .page-nav{padding:14px 16px;gap:8px;}
+  .pnav-label{display:none;}
+  .pnav-btn{padding:10px 14px;font-size:10px;letter-spacing:0.08em;}
   .why-grid{grid-template-columns:1fr;}
   .retainer{flex-direction:column;}
   .retainer-right{text-align:left;}
-  .contact-hero{padding:72px 28px;}
+  .contact-hero{padding:64px 20px;}
   .solution-two-col{grid-template-columns:1fr;}
+  .conf-note{margin:0 20px 48px;padding:20px;}
+  .section-intro{margin-bottom:40px;}
+  .pain-grid{margin-bottom:48px;}
+  .float-contact{bottom:72px;right:12px;}
+  .page{overflow-x:hidden;}
 }
 @media(max-width:480px){
-  h1{font-size:34px;}
-  h2{font-size:26px;}
+  h1{font-size:30px;line-height:1.1;}
+  h2{font-size:24px;}
+  h3{font-size:20px;}
+  .cover-left{padding:64px 20px 40px;}
   .cover-stats{grid-template-columns:1fr 1fr;}
-  .stat-n{font-size:30px;}
+  .stat-n{font-size:28px;}
+  .stat{padding:20px 16px;}
   .tier-price{font-size:30px;}
-  .retainer-price{font-size:28px;}
+  .retainer-price{font-size:26px;}
+  .pnav-dots{gap:5px;}
+  .pnav-dot{width:6px;height:6px;}
+  .pnav-dot.active{width:18px;}
+  .page-content{padding:48px 16px;}
+  .phase-hdr-body{padding:16px 16px;}
+  .phase-badge{min-width:56px;font-size:24px;}
+  .meet-card{padding:28px 20px;}
+  .contact-card{padding:24px 20px;}
+  .contact-hero{padding:48px 16px;}
+  .contact-grid{padding:24px 16px;}
+  .conf-note{margin:0 16px 40px;}
 }
+
+/* GLOBAL OVERFLOW GUARD */
+html,body{overflow-x:hidden;max-width:100vw;}
 
 /* TWO COL SOLUTION */
 .solution-two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
@@ -709,9 +738,9 @@ em{font-style:italic;}
       <div class="cover-right">
         <p class="cover-quote reveal">A business that runs on systems outlasts one that runs entirely on people.</p>
         <div class="cover-stats reveal">
-          <div class="stat"><div class="stat-n">2</div><div class="stat-l">Brands managed — Zayoma atelier and Zayoma Brainery school</div></div>
-          <div class="stat"><div class="stat-n">3</div><div class="stat-l">Platforms posting consistently — Instagram, TikTok, Pinterest</div></div>
-          <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">Enquiry responses — day, night, weekends, public holidays</div></div>
+          <div class="stat"><div class="stat-n">2</div><div class="stat-l">Brands managed: Zayoma atelier and Zayoma Brainery school</div></div>
+          <div class="stat"><div class="stat-n">3</div><div class="stat-l">Platforms posting consistently: Instagram, TikTok, Pinterest</div></div>
+          <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">Enquiry responses around the clock: day, night, weekends, public holidays</div></div>
           <div class="stat"><div class="stat-n">6wks</div><div class="stat-l">From today to a fully operational content and lead engine</div></div>
         </div>
       </div>
@@ -908,7 +937,7 @@ em{font-style:italic;}
     <div class="rule reveal"></div>
     <div class="pricing-intro reveal">
       <h2>Three packages. One clear outcome.</h2>
-      <p style="margin-top:16px;">Choose the level of investment that fits where your brand is right now. Every package delivers the same outcome — a system that runs reliably. The difference is depth, speed, and the level of ongoing support you receive. You pay per phase, not everything upfront.</p>
+      <p style="margin-top:16px;">Choose the level of investment that fits where your brand is right now. Every package delivers the same outcome: a system that runs reliably. The difference is depth, speed, and the level of ongoing support you receive. You pay per phase, not everything upfront.</p>
     </div>
       <div class="tier">
         <div class="tier-label">Package One</div>
@@ -929,9 +958,9 @@ em{font-style:italic;}
         </ul>
         <div class="tier-phases">
           <div class="tier-phases-label">Phase breakdown</div>
-          <div class="ph-row"><span>Phase 1 — Content engine</span><span>&#8358;180,000</span></div>
-          <div class="ph-row"><span>Phase 2 — Enquiry system</span><span>&#8358;150,000</span></div>
-          <div class="ph-row"><span>Phase 3 — Reporting and nurture</span><span>&#8358;130,000</span></div>
+          <div class="ph-row"><span>Phase 1: Content engine</span><span>&#8358;180,000</span></div>
+          <div class="ph-row"><span>Phase 2: Enquiry system</span><span>&#8358;150,000</span></div>
+          <div class="ph-row"><span>Phase 3: Reporting and nurture</span><span>&#8358;130,000</span></div>
           <div class="ph-total"><span>Total</span><span>&#8358;460,000</span></div>
         </div>
         <div class="tier-phases" style="margin-bottom:20px;border:1px solid rgba(196,154,60,0.4);background:var(--gold-light);">
@@ -953,23 +982,23 @@ em{font-style:italic;}
           <li>Advanced DM bot with sales conversation logic</li>
           <li>TikTok-specific content strategy and scheduling</li>
           <li>Pinterest board automation and product tagging</li>
-          <li>Conversion tracking — which content drives enquiries</li>
+          <li>Conversion tracking to see which content drives enquiries</li>
           <li>Monthly strategy review call included</li>
           <li>Priority build completed in 4 weeks total</li>
           <li>Two training sessions included on handover</li>
         </ul>
         <div class="tier-phases">
           <div class="tier-phases-label">Phase breakdown</div>
-          <div class="ph-row"><span>Phase 1 — Advanced content engine</span><span>&#8358;360,000</span></div>
-          <div class="ph-row"><span>Phase 2 — Full enquiry and WhatsApp</span><span>&#8358;300,000</span></div>
-          <div class="ph-row"><span>Phase 3 — Reporting and deep nurture</span><span>&#8358;260,000</span></div>
+          <div class="ph-row"><span>Phase 1: Advanced content engine</span><span>&#8358;360,000</span></div>
+          <div class="ph-row"><span>Phase 2: Full enquiry and WhatsApp</span><span>&#8358;300,000</span></div>
+          <div class="ph-row"><span>Phase 3: Reporting and deep nurture</span><span>&#8358;260,000</span></div>
           <div class="ph-total"><span>Total</span><span>&#8358;920,000</span></div>
         </div>
         <div class="tier-phases" style="margin-bottom:20px;background:rgba(196,154,60,0.12);border:1px solid rgba(196,154,60,0.25);">
           <div class="tier-phases-label" style="color:rgba(196,154,60,0.7);">Monthly maintenance fee</div>
           <div class="ph-row"><span style="color:rgba(248,246,241,0.55);">Keeps the system running every month</span><span style="color:var(--gold);font-size:15px;font-weight:700;">&#8358;250,000</span></div>
         </div>
-        <button class="tier-btn" onclick="goPage(5)">Most popular — start here</button>
+        <button class="tier-btn" onclick="goPage(5)">Most popular: start here</button>
       </div>
 
     <div class="tier-grid reveal">
@@ -981,19 +1010,19 @@ em{font-style:italic;}
         <ul class="tier-features">
           <li>Everything in Growth at full production depth</li>
           <li>Voice-based enquiry bot for WhatsApp calls</li>
-          <li>Full CRM — every lead tracked from first contact to sale</li>
+          <li>Full CRM with every lead tracked from first contact to sale</li>
           <li>Competitor content monitoring and weekly insight report</li>
           <li>AI-generated Reel concept briefs for your team weekly</li>
           <li>Student lifecycle automation from enquiry to Brainery alumni</li>
           <li>Dedicated account management with monthly check-in calls</li>
-          <li>Rush build — completed in 3 weeks total</li>
+          <li>Rush build, completed in 3 weeks total</li>
           <li>Three full training sessions on handover</li>
         </ul>
         <div class="tier-phases">
           <div class="tier-phases-label">Phase breakdown</div>
-          <div class="ph-row"><span>Phase 1 — Full content system</span><span>&#8358;720,000</span></div>
-          <div class="ph-row"><span>Phase 2 — Full enquiry and voice</span><span>&#8358;600,000</span></div>
-          <div class="ph-row"><span>Phase 3 — Full lifecycle system</span><span>&#8358;520,000</span></div>
+          <div class="ph-row"><span>Phase 1: Full content system</span><span>&#8358;720,000</span></div>
+          <div class="ph-row"><span>Phase 2: Full enquiry and voice</span><span>&#8358;600,000</span></div>
+          <div class="ph-row"><span>Phase 3: Full lifecycle system</span><span>&#8358;520,000</span></div>
           <div class="ph-total"><span>Total</span><span>&#8358;1,840,000</span></div>
         </div>
         <div class="tier-phases" style="margin-bottom:20px;border:1px solid rgba(196,154,60,0.4);background:var(--gold-light);">
@@ -1007,7 +1036,7 @@ em{font-style:italic;}
     <div class="retainer reveal">
       <div class="retainer-left">
         <h3>What is the monthly maintenance fee?</h3>
-        <p>Every system built by Frederick Sam requires ongoing maintenance to keep running at full capacity. Platform updates, content voice adjustments, performance optimisations, and system monitoring all happen behind the scenes every month. The maintenance fee covers everything required to ensure your system delivers consistent results. If the monthly maintenance fee is not paid, the system is paused until it is renewed. Think of it the same way you think of electricity — the infrastructure exists, but it needs to be powered to work.</p>
+        <p>Every system built by Frederick Sam requires ongoing maintenance to keep running at full capacity. Platform updates, content voice adjustments, performance optimisations, and system monitoring all happen behind the scenes every month. The maintenance fee covers everything required to ensure your system delivers consistent results. If the monthly maintenance fee is not paid, the system is paused until it is renewed. Think of it the same way you think of electricity: the infrastructure exists but it needs to be powered to work.</p>
       </div>
       <div class="retainer-right">
         <div class="retainer-price" style="font-size:22px;font-family:'Inter',sans-serif;font-weight:400;color:var(--mid);margin-bottom:12px;">Monthly maintenance fee</div>
@@ -1038,7 +1067,7 @@ em{font-style:italic;}
       <div class="why-card reveal">
         <div class="why-num">IV</div>
         <h4>You will know exactly what is working</h4>
-        <p>For the first time, you receive a clear weekly report showing follower growth, post performance, and enquiry volume — without asking a single person to compile it.</p>
+        <p>For the first time, you receive a clear weekly report showing follower growth, post performance, and enquiry volume, without asking a single person to compile it.</p>
       </div>
     </div>
 
@@ -1071,13 +1100,13 @@ em{font-style:italic;}
           <div class="meet-avatar">FS</div>
           <div class="meet-name">Frederick Sam</div>
           <div class="meet-title">AI Automation and Agents Expert &middot; Operations Specialist</div>
-          <div class="meet-bio">Frederick Samuel-Itepu Uwakwe is a specialist in AI automation, agentic systems, and business operations. He currently serves as Head of Operations and Director of Content Strategy at Global Air U, a drone industry consulting and AI advisory firm based in Houston, Texas, operating remotely from Lagos, Nigeria. He builds systems that replace manual, repetitive work with reliable automation — and he has done it across EdTech, AI programs, drone education, media production, and now client-facing agency work.</div>
+          <div class="meet-bio">Frederick Samuel-Itepu Uwakwe is a specialist in AI automation, agentic systems, and business operations. He currently serves as Head of Operations and Director of Content Strategy at Global Air U, a drone industry consulting and AI advisory firm based in Houston, Texas, operating remotely from Lagos, Nigeria. He builds systems that replace manual, repetitive work with reliable automation, and he has done it across EdTech, AI programs, drone education, media production, and now client-facing agency work.</div>
           <div class="meet-links">
             <a href="https://wa.me/2349063765321" target="_blank" class="meet-link">
               <div class="meet-link-icon icon-wa">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               </div>
-              WhatsApp &mdash; 09063765321
+              WhatsApp: 09063765321
             </a>
             <a href="mailto:fredericksamuwakwe@gmail.com" class="meet-link">
               <div class="meet-link-icon icon-em">
@@ -1100,7 +1129,7 @@ em{font-style:italic;}
           <div class="cred-icon">&#9881;</div>
           <div>
             <div class="cred-title">Live automation pipeline in production today</div>
-            <div class="cred-desc">Frederick has already built and launched a fully automated LinkedIn content pipeline — a system that scrapes articles, writes posts using the Claude AI API, schedules them via Buffer, and tracks everything in Airtable. It is live, running, and generating real content. The Zayoma system uses the same proven architecture.</div>
+            <div class="cred-desc">Frederick has already built and launched a fully automated LinkedIn content pipeline, a system that scrapes articles, writes posts using the Claude AI API, schedules them via Buffer, and tracks everything in Airtable. It is live, running, and generating real content. The Zayoma system uses the same proven architecture.</div>
           </div>
         </div>
         <div class="cred-item">
@@ -1121,7 +1150,7 @@ em{font-style:italic;}
           <div class="cred-icon">&#128161;</div>
           <div>
             <div class="cred-title">Currently building AI agents for Global Air U</div>
-            <div class="cred-desc">As Head of Operations and Director of Content Strategy at Global Air U — a US-based drone consulting and AI advisory firm — Frederick applies prompt engineering and AI automation daily to build systems that increase speed and quality of business output. This is not a side interest. It is his current professional role.</div>
+            <div class="cred-desc">As Head of Operations and Director of Content Strategy at Global Air U, a US-based drone consulting and AI advisory firm, Frederick applies prompt engineering and AI automation daily to build systems that increase speed and quality of business output. This is not a side interest. It is his current professional role.</div>
           </div>
         </div>
       </div>
@@ -1176,7 +1205,7 @@ em{font-style:italic;}
         <div class="cd-icon" style="background:#25D366;color:#fff;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </div>
-        WhatsApp and phone &mdash; 09063765321
+        WhatsApp and phone: 09063765321
       </a>
       <a href="mailto:fredericksamuwakwe@gmail.com" class="contact-detail">
         <div class="cd-icon" style="background:var(--teal);color:#fff;">
